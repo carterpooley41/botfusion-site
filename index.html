@@ -3,157 +3,208 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BotFusion | AI Bots for Business Growth</title>
+<title>BotFusion Tech</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="theme-color" content="#00f7ff">
 <style>
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+margin: 0; padding: 0; box-sizing: border-box;
 }
-
-html, body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: #f7f9fc;
-color: #1a1a1a;
+body {
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+color: white;
+overflow-x: hidden;
 scroll-behavior: smooth;
 }
-
 header {
 height: 100vh;
-background: linear-gradient(145deg, #005f99, #00bfff);
-color: white;
 display: flex;
-align-items: center;
-justify-content: center;
 flex-direction: column;
+justify-content: center;
+align-items: center;
 text-align: center;
-padding: 0 20px;
+background: #0f0c29;
+position: relative;
 }
-
 header h1 {
 font-size: 3rem;
-line-height: 1.2;
-max-width: 800px;
+color: #fff;
+text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
-
 header p {
-font-size: 1.3rem;
-margin-top: 1rem;
-opacity: 0.9;
-}
-
-section {
-padding: 100px 20px;
-max-width: 1100px;
-margin: auto;
-}
-
-.feature-section {
-display: flex;
-flex-direction: column;
-gap: 60px;
-}
-
-.feature {
-background: white;
-padding: 40px;
-border-radius: 15px;
-box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-opacity: 0;
-transform: translateY(40px);
-transition: all 0.6s ease;
-}
-
-.feature.visible {
-opacity: 1;
-transform: translateY(0);
-}
-
-.feature h2 {
-font-size: 2rem;
-margin-bottom: 15px;
-color: #003366;
-}
-
-.feature p {
-font-size: 1.15rem;
-color: #333;
-line-height: 1.6;
-}
-
-.cta {
-background: #ffffff;
-text-align: center;
-padding: 100px 20px;
-}
-
-.cta h2 {
-font-size: 2.5rem;
-margin-bottom: 1rem;
-color: #005f99;
-}
-
-.cta p {
 font-size: 1.2rem;
-margin-bottom: 30px;
+color: #ccc;
+margin-top: 1rem;
 }
-
-.cta a {
-background: #00bfff;
-color: white;
-padding: 14px 28px;
-font-size: 1.1rem;
+.scroll-down {
+position: absolute;
+bottom: 30px;
+font-size: 2rem;
+color: #00f7ff;
+cursor: pointer;
+animation: bounce 2s infinite;
+}
+.scroll-visual {
+position: absolute;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.scroll-visual img {
+width: 300px;
+height: auto;
+opacity: 0.15;
+animation: pulseGlow 4s infinite;
+}
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+@keyframes pulseGlow {
+0%, 100% {
+filter: drop-shadow(0 0 10px #00f7ff) brightness(1);
+transform: scale(1) rotateY(var(--rotateY));
+}
+50% {
+filter: drop-shadow(0 0 20px #00f7ff) brightness(1.2);
+transform: scale(1.05) rotateY(var(--rotateY));
+}
+}
+section {
+padding: 80px 20px;
+text-align: center;
+}
+.features {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+margin-top: 50px;
+}
+.card {
+background: rgba(255, 255, 255, 0.05);
+padding: 30px;
+border-radius: 15px;
+width: 300px;
+transition: transform 0.3s;
+border: 1px solid #00f7ff;
+}
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px #00f7ff;
+}
+.card h3 {
+color: #00f7ff;
+margin-bottom: 15px;
+}
+form {
+max-width: 600px;
+margin: auto;
+text-align: left;
+background: rgba(255, 255, 255, 0.05);
+padding: 25px;
 border-radius: 10px;
-text-decoration: none;
-transition: background 0.3s ease;
+border: 1px solid #00f7ff;
 }
-
-.cta a:hover {
-background: #008fcc;
+form h2 {
+color: #00f7ff;
+text-align: center;
+margin-bottom: 20px;
+}
+input, textarea {
+width: 100%;
+padding: 12px;
+margin-top: 10px;
+background: #111;
+color: white;
+border: none;
+border-bottom: 2px solid #00f7ff;
+}
+button {
+background: #00f7ff;
+border: none;
+color: black;
+padding: 15px 30px;
+margin-top: 20px;
+cursor: pointer;
+display: block;
+width: 100%;
+font-weight: bold;
+border-radius: 5px;
+}
+footer {
+text-align: center;
+padding: 40px 20px;
+background: #111;
+color: #666;
+}
+@media (max-width: 768px) {
+header h1 { font-size: 2.2rem; }
+.card { width: 90%; }
+form { padding: 20px; }
 }
 </style>
 </head>
 <body>
 
 <header>
-<h1>AI Chatbots That Sell & Support — 24/7</h1>
-<p>Automate your customer experience and boost conversions without lifting a finger.</p>
+<div class="scroll-visual">
+<img id="brain" src="brain.png" alt="Rotating Brain"/>
+</div>
+<h1>BotFusion Tech</h1>
+<p>Next-gen automation, AI chatbots, and digital dominance</p>
+<div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">↓</div>
 </header>
 
-<section class="feature-section">
-<div class="feature">
-<h2>Sales Bots That Actually Close</h2>
-<p>Turn website visitors into paying customers with bots trained to answer objections, guide users, and book calls automatically. They work while you sleep.</p>
+<section id="about">
+<h2>Why BotFusion?</h2>
+<div class="features">
+<div class="card">
+<h3>Smart Chatbots</h3>
+<p>24/7 AI-driven bots that handle sales, support, and scheduling without burnout.</p>
 </div>
-
-<div class="feature">
-<h2>Support Bots That Customers Love</h2>
-<p>Deliver fast, helpful support that feels human — without hiring a team. Our bots reduce ticket volume and increase satisfaction across the board.</p>
+<div class="card">
+<h3>Website Automation</h3>
+<p>Turn any page into a high-converting funnel with powerful AI integration.</p>
 </div>
-
-<div class="feature">
-<h2>Built for Small Businesses Ready to Scale</h2>
-<p>AI isn't just for enterprise. Whether you're a solo founder or a growing team, we bring big-league automation to small business budgets — and drive real results.</p>
+<div class="card">
+<h3>Email Funnels</h3>
+<p>Capture leads. Convert with sequences. Grow your monthly MRR on autopilot.</p>
+</div>
 </div>
 </section>
 
-<section class="cta">
-<h2>Ready to Scale Your Business with AI?</h2>
-<p>Let’s create something that works while you sleep. Book a free consult and get your first bot online fast.</p>
-<a href="#contact">Get Started</a>
+<section>
+<form action="https://formsubmit.co/contact@botfusiontech.com" method="POST">
+<input type="hidden" name="_cc" value="botfusionsetup@gmail.com">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="box">
+<h2>Let's Build Your AI Bot</h2>
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Email Address" required />
+<textarea name="message" rows="5" placeholder="Describe your project or needs..."></textarea>
+<button type="submit">Submit</button>
+</form>
 </section>
+
+<footer>
+Built by BotFusion Tech. Power your presence with AI.
+</footer>
 
 <script>
-const features = document.querySelectorAll('.feature');
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
+const brain = document.getElementById('brain');
+window.addEventListener('scroll', () => {
+if (brain) {
+const rotateY = window.scrollY % 360;
+brain.style.setProperty('--rotateY', `${rotateY}deg`);
 }
 });
-}, { threshold: 0.2 });
-
-features.forEach(feature => observer.observe(feature));
 </script>
 
 </body>
