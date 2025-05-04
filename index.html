@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BotFusion | AI Bots for Business Growth</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #f7f9fc;
+color: #1a1a1a;
+scroll-behavior: smooth;
+}
+
+header {
+height: 100vh;
+background: linear-gradient(145deg, #005f99, #00bfff);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+padding: 0 20px;
+}
+
+header h1 {
+font-size: 3rem;
+line-height: 1.2;
+max-width: 800px;
+}
+
+header p {
+font-size: 1.3rem;
+margin-top: 1rem;
+opacity: 0.9;
+}
+
+section {
+padding: 100px 20px;
+max-width: 1100px;
+margin: auto;
+}
+
+.feature-section {
+display: flex;
+flex-direction: column;
+gap: 60px;
+}
+
+.feature {
+background: white;
+padding: 40px;
+border-radius: 15px;
+box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.6s ease;
+}
+
+.feature.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.feature h2 {
+font-size: 2rem;
+margin-bottom: 15px;
+color: #003366;
+}
+
+.feature p {
+font-size: 1.15rem;
+color: #333;
+line-height: 1.6;
+}
+
+.cta {
+background: #ffffff;
+text-align: center;
+padding: 100px 20px;
+}
+
+.cta h2 {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+color: #005f99;
+}
+
+.cta p {
+font-size: 1.2rem;
+margin-bottom: 30px;
+}
+
+.cta a {
+background: #00bfff;
+color: white;
+padding: 14px 28px;
+font-size: 1.1rem;
+border-radius: 10px;
+text-decoration: none;
+transition: background 0.3s ease;
+}
+
+.cta a:hover {
+background: #008fcc;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>AI Chatbots That Sell & Support — 24/7</h1>
+<p>Automate your customer experience and boost conversions without lifting a finger.</p>
+</header>
+
+<section class="feature-section">
+<div class="feature">
+<h2>Sales Bots That Actually Close</h2>
+<p>Turn website visitors into paying customers with bots trained to answer objections, guide users, and book calls automatically. They work while you sleep.</p>
+</div>
+
+<div class="feature">
+<h2>Support Bots That Customers Love</h2>
+<p>Deliver fast, helpful support that feels human — without hiring a team. Our bots reduce ticket volume and increase satisfaction across the board.</p>
+</div>
+
+<div class="feature">
+<h2>Built for Small Businesses Ready to Scale</h2>
+<p>AI isn't just for enterprise. Whether you're a solo founder or a growing team, we bring big-league automation to small business budgets — and drive real results.</p>
+</div>
+</section>
+
+<section class="cta">
+<h2>Ready to Scale Your Business with AI?</h2>
+<p>Let’s create something that works while you sleep. Book a free consult and get your first bot online fast.</p>
+<a href="#contact">Get Started</a>
+</section>
+
+<script>
+const features = document.querySelectorAll('.feature');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.2 });
+
+features.forEach(feature => observer.observe(feature));
+</script>
+
+</body>
+</html>
