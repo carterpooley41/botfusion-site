@@ -1,0 +1,17 @@
+
+{
+  "name": "BotFusion Tech",
+  "short_name": "BotFusion",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0c29",
+  "theme_color": "#00f7ff",
+  "description": "Futuristic AI automation for modern businesses",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

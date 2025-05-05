@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BotFusion Tech</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="theme-color" content="#00f7ff">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #0f0c29;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 1rem;
+    }
+    .scroll-visual {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .scroll-visual img {
+      width: 400px;
+      height: auto;
+      opacity: 0.12;
+      animation: pulseGlow 5s infinite ease-in-out;
+      will-change: transform;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px #00f7ff); }
+      50% { filter: drop-shadow(0 0 30px #00f7ff); }
+    }
+    .scroll-notice {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #ffa500;
+      animation: pulseText 2s infinite;
+    }
+    @keyframes pulseText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    section {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .info-box {
+      max-width: 600px;
+      margin-bottom: 60px;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #00f7ff;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .info-box h2 {
+      color: #00f7ff;
+      margin-bottom: 10px;
+    }
+    form {
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #00f7ff;
+      border-radius: 12px;
+    }
+    input, textarea {
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px;
+      background: #111;
+      border: none;
+      color: white;
+      border-bottom: 2px solid #00f7ff;
+    }
+    button {
+      background: #00f7ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="scroll-visual">
+      <img id="city" src="braincity.png" alt="BotFusion City">
+    </div>
+    <h1>BotFusion Tech</h1>
+    <p>Next-gen automation, AI chatbots, and digital dominance</p>
+    <div class="scroll-notice">Ready to level up your business? Scroll to the bottom to start your journey.</div>
+  </header>
+
+  <section>
+    <div class="info-box">
+      <h2>Automate Sales & Support</h2>
+      <p>Deploy bots that handle leads, bookings, and customer service 24/7.</p>
+    </div>
+    <div class="info-box">
+      <h2>Dominate Your Niche</h2>
+      <p>Stand out with futuristic tech built to convert clicks into clients.</p>
+    </div>
+    <div class="info-box">
+      <h2>Capture & Convert</h2>
+      <p>We integrate smart forms and email automation to boost revenue.</p>
+    </div>
+  </section>
+
+  <section>
+    <form action="https://formsubmit.co/contact@botfusiontech.com" method="POST">
+      <input type="hidden" name="_cc" value="botfusionsetup@gmail.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <h2>Start Your Project</h2>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <textarea name="message" rows="5" placeholder="Describe what you need built..."></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    const city = document.getElementById('city');
+    window.addEventListener('scroll', () => {
+      if (city) {
+        const rotate = window.scrollY % 360;
+        city.style.transform = `rotateY(${rotate}deg)`;
+      }
+    });
+  </script>
+
+</body>
+</html>
