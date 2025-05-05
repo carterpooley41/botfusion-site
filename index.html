@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BotFusion Tech</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="theme-color" content="#00f7ff">
+<link rel="icon" href="favicon (1).png" type="image/png">
+<meta name="theme-color" content="#00f7ff" />
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -14,83 +14,124 @@ background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 color: white;
 overflow-x: hidden;
 }
+
 header {
 height: 100vh;
-background: url('header-brain-city.png') center/cover no-repeat;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-}
-header h1 {
-font-size: 3rem;
-color: #fff;
-text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-background: rgba(0, 0, 0, 0.6);
-padding: 10px 20px;
-border-radius: 12px;
-}
-header p {
-font-size: 1.2rem;
-color: #ccc;
-margin-top: 1rem;
+background: url('brain_city.png') center/cover no-repeat;
 }
 
-.section {
-padding: 60px 20px;
+header h1 {
+font-size: 3.5rem;
+color: #00f7ff;
+text-shadow: 0 0 20px #00f7ff;
+background: rgba(0, 0, 0, 0.6);
+padding: 15px 30px;
+border-radius: 20px;
+margin-bottom: 10px;
+}
+
+header p {
+font-size: 1.2rem;
+color: #eee;
+}
+
+.scroll-layers {
+position: relative;
+height: 300px;
+overflow: hidden;
+}
+
+.scroll-layers img {
+position: absolute;
+width: 100%;
+animation: scroll 30s linear infinite;
+}
+
+.scroll-layers img:nth-child(1) {
+z-index: 1;
+animation-delay: 0s;
+}
+
+.scroll-layers img:nth-child(2) {
+z-index: 2;
+animation-delay: 2s;
+}
+
+.scroll-layers img:nth-child(3) {
+z-index: 3;
+animation-delay: 4s;
+}
+
+@keyframes scroll {
+0% { transform: translateY(0); }
+100% { transform: translateY(-10px); }
+}
+
+main {
+padding: 40px 20px;
 text-align: center;
 }
 
-.gallery {
+h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+.image-gallery {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 30px;
-margin-top: 40px;
 }
 
-.gallery img {
-width: 320px;
-border-radius: 20px;
-border: 2px solid #00f7ff;
-box-shadow: 0 0 20px #00f7ff33;
-transition: transform 0.3s ease;
+.image-gallery img {
+max-width: 400px;
+width: 90%;
+border-radius: 16px;
+box-shadow: 0 0 25px rgba(0, 247, 255, 0.3);
+transition: transform 0.3s;
 }
 
-.gallery img:hover {
+.image-gallery img:hover {
 transform: scale(1.05);
 }
 
 footer {
 text-align: center;
 padding: 20px;
+color: #888;
 font-size: 0.9rem;
-color: #999;
 }
 </style>
 </head>
 <body>
-
 <header>
 <h1>BotFusion Tech</h1>
 <p>Next-gen automation, AI chatbots, and digital dominance</p>
 </header>
 
-<section class="section">
-<h2>Explore Our Visual Story</h2>
-<div class="gallery">
-<img src="rocket-brain-city.png" alt="Rocket Brain">
-<img src="robot-brain.png" alt="Robot Brain">
-<img src="robot-atom-city.png" alt="Robot with Atom">
-<img src="human-idea.png" alt="Human Lightbulb">
-<img src="atom-hand.png" alt="Atom in Robotic Hand">
+<div class="scroll-layers">
+<img src="city_layer1 (1).png" alt="city layer 1">
+<img src="city_layer2 (1).png" alt="city layer 2">
+<img src="city_layer3 (1).png" alt="city layer 3">
 </div>
-</section>
+
+<main>
+<h2>Explore Our Visual Story</h2>
+<div class="image-gallery">
+<img src="rocket_brain.png" alt="Rocket Brain">
+<img src="robot_brain.png" alt="Robot Brain">
+<img src="atom_hand.png" alt="Atom in Robotic Hand">
+</div>
+</main>
 
 <footer>
 &copy; 2025 BotFusion Tech. All rights reserved.
 </footer>
-
 </body>
 </html>
