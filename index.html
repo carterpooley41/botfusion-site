@@ -8,28 +8,42 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <meta name="theme-color" content="#00f7ff">
 <style>
-* {
-margin: 0; padding: 0; box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
 font-family: 'Segoe UI', sans-serif;
 background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 color: white;
 overflow-x: hidden;
-scroll-behavior: smooth;
 }
 header {
 height: 100vh;
+overflow: hidden;
+position: relative;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-background: #0f0c29;
-position: relative;
 }
+.parallax-layer {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+will-change: transform;
+opacity: 0.15;
+}
+#layer1 { background-image: url('city_layer1.png'); z-index: 1; }
+#layer2 { background-image: url('city_layer2.png'); z-index: 2; }
+#layer3 { background-image: url('city_layer3.png'); z-index: 3; }
+
 header h1 {
 font-size: 3rem;
+z-index: 4;
 color: #fff;
 text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
@@ -37,146 +51,92 @@ header p {
 font-size: 1.2rem;
 color: #ccc;
 margin-top: 1rem;
+z-index: 4;
 }
-.scroll-down {
-position: absolute;
-bottom: 30px;
-font-size: 2rem;
-color: #00f7ff;
-cursor: pointer;
-animation: bounce 2s infinite;
+.scroll-notice {
+margin-top: 20px;
+font-size: 1rem;
+color: #ffa500;
+z-index: 4;
+animation: pulseText 2s infinite;
 }
-.scroll-visual {
-position: absolute;
-top: 0; left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-display: flex;
-justify-content: center;
-align-items: center;
+@keyframes pulseText {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.5; }
 }
-.scroll-visual img {
-width: 300px;
-height: auto;
-opacity: 0.15;
-animation: pulseGlow 4s infinite;
-}
-@keyframes bounce {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-}
-@keyframes pulseGlow {
-0%, 100% {
-filter: drop-shadow(0 0 10px #00f7ff) brightness(1);
-transform: scale(1) rotateY(var(--rotateY));
-}
-50% {
-filter: drop-shadow(0 0 20px #00f7ff) brightness(1.2);
-transform: scale(1.05) rotateY(var(--rotateY));
-}
-}
+
 section {
-padding: 80px 20px;
+padding: 60px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+background: #0f0c29;
+}
+.info-box {
+max-width: 600px;
+margin-bottom: 60px;
+padding: 30px;
+background: rgba(255,255,255,0.05);
+border: 1px solid #00f7ff;
+border-radius: 12px;
 text-align: center;
 }
-.features {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 30px;
-margin-top: 50px;
-}
-.card {
-background: rgba(255, 255, 255, 0.05);
-padding: 30px;
-border-radius: 15px;
-width: 300px;
-transition: transform 0.3s;
-border: 1px solid #00f7ff;
-}
-.card:hover {
-transform: scale(1.05);
-box-shadow: 0 0 20px #00f7ff;
-}
-.card h3 {
+.info-box h2 {
 color: #00f7ff;
-margin-bottom: 15px;
+margin-bottom: 10px;
 }
 form {
+width: 100%;
 max-width: 600px;
-margin: auto;
-text-align: left;
-background: rgba(255, 255, 255, 0.05);
-padding: 25px;
-border-radius: 10px;
+padding: 30px;
+background: rgba(255,255,255,0.05);
 border: 1px solid #00f7ff;
-}
-form h2 {
-color: #00f7ff;
-text-align: center;
-margin-bottom: 20px;
+border-radius: 12px;
 }
 input, textarea {
 width: 100%;
+margin-top: 12px;
 padding: 12px;
-margin-top: 10px;
 background: #111;
-color: white;
 border: none;
+color: white;
 border-bottom: 2px solid #00f7ff;
 }
 button {
 background: #00f7ff;
-border: none;
 color: black;
-padding: 15px 30px;
-margin-top: 20px;
-cursor: pointer;
-display: block;
-width: 100%;
 font-weight: bold;
-border-radius: 5px;
-}
-footer {
-text-align: center;
-padding: 40px 20px;
-background: #111;
-color: #666;
-}
-@media (max-width: 768px) {
-header h1 { font-size: 2.2rem; }
-.card { width: 90%; }
-form { padding: 20px; }
+border: none;
+padding: 15px;
+width: 100%;
+margin-top: 20px;
+border-radius: 6px;
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="scroll-visual">
-<img id="brain" src="brain.png" alt="Rotating Brain"/>
-</div>
+<div id="layer1" class="parallax-layer"></div>
+<div id="layer2" class="parallax-layer"></div>
+<div id="layer3" class="parallax-layer"></div>
 <h1>BotFusion Tech</h1>
 <p>Next-gen automation, AI chatbots, and digital dominance</p>
-<div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">↓</div>
+<div class="scroll-notice">Ready to level up your business? Scroll to the bottom to start your journey.</div>
 </header>
 
-<section id="about">
-<h2>Why BotFusion?</h2>
-<div class="features">
-<div class="card">
-<h3>Smart Chatbots</h3>
-<p>24/7 AI-driven bots that handle sales, support, and scheduling without burnout.</p>
+<section>
+<div class="info-box">
+<h2>Automate Sales & Support</h2>
+<p>Deploy bots that handle leads, bookings, and customer service 24/7.</p>
 </div>
-<div class="card">
-<h3>Website Automation</h3>
-<p>Turn any page into a high-converting funnel with powerful AI integration.</p>
+<div class="info-box">
+<h2>Dominate Your Niche</h2>
+<p>Stand out with futuristic tech built to convert clicks into clients.</p>
 </div>
-<div class="card">
-<h3>Email Funnels</h3>
-<p>Capture leads. Convert with sequences. Grow your monthly MRR on autopilot.</p>
-</div>
+<div class="info-box">
+<h2>Capture & Convert</h2>
+<p>We integrate smart forms and email automation to boost revenue.</p>
 </div>
 </section>
 
@@ -185,25 +145,24 @@ form { padding: 20px; }
 <input type="hidden" name="_cc" value="botfusionsetup@gmail.com">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="box">
-<h2>Let's Build Your AI Bot</h2>
+<h2>Start Your Project</h2>
 <input type="text" name="name" placeholder="Your Name" required />
 <input type="email" name="email" placeholder="Email Address" required />
-<textarea name="message" rows="5" placeholder="Describe your project or needs..."></textarea>
+<textarea name="message" rows="5" placeholder="Describe what you need built..."></textarea>
 <button type="submit">Submit</button>
 </form>
 </section>
 
-<footer>
-Built by BotFusion Tech. Power your presence with AI.
-</footer>
-
 <script>
-const brain = document.getElementById('brain');
+const layer1 = document.getElementById('layer1');
+const layer2 = document.getElementById('layer2');
+const layer3 = document.getElementById('layer3');
+
 window.addEventListener('scroll', () => {
-if (brain) {
-const rotateY = window.scrollY % 360;
-brain.style.setProperty('--rotateY', `${rotateY}deg`);
-}
+const scrollY = window.scrollY;
+layer1.style.transform = `translateY(${scrollY * 0.3}px) rotateY(${scrollY * 0.02}deg)`;
+layer2.style.transform = `translateY(${scrollY * 0.2}px) rotateY(${scrollY * 0.015}deg)`;
+layer3.style.transform = `translateY(${scrollY * 0.1}px) rotateY(${scrollY * 0.01}deg)`;
 });
 </script>
 
