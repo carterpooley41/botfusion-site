@@ -4,181 +4,191 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>BotFusion Tech</title>
-<link rel="icon" type="image/png" href="favicon (1).png" />
+<link rel="icon" href="favicon (1).png" />
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
 font-family: 'Segoe UI', sans-serif;
-color: white;
 background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+color: white;
 overflow-x: hidden;
 }
 
+/* Scroll animation city layers */
+.city1, .city2, .city3 {
+position: fixed;
+width: 100%;
+height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+z-index: -3;
+animation: move1 60s linear infinite;
+}
+.city2 {
+background-image: url("city_layer2 (1).png");
+animation: move2 100s linear infinite;
+z-index: -2;
+}
+.city3 {
+background-image: url("city_layer3 (1).png");
+animation: move3 140s linear infinite;
+z-index: -1;
+}
+.city1 {
+background-image: url("city_layer1 (1).png");
+}
+@keyframes move1 { 0% { background-position: 0 0; } 100% { background-position: -1000px 0; } }
+@keyframes move2 { 0% { background-position: 0 0; } 100% { background-position: -1500px 0; } }
+@keyframes move3 { 0% { background-position: 0 0; } 100% { background-position: -2000px 0; } }
+
+/* Header */
 header {
-position: relative;
 height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-overflow: hidden;
+position: relative;
 }
-
-.city-layer {
-position: absolute;
-width: 100%;
-height: 100%;
-background-size: cover;
-background-position: center;
-z-index: -1;
-}
-
-.city1 {
-background-image: url('city_layer1 (1).png');
-animation: scrollCity1 30s linear infinite;
-}
-
-.city2 {
-background-image: url('city_layer2 (1).png');
-animation: scrollCity2 40s linear infinite;
-}
-
-.city3 {
-background-image: url('city_layer3 (1).png');
-animation: scrollCity3 60s linear infinite;
-}
-
-@keyframes scrollCity1 {
-0% { background-position: 0 0; }
-100% { background-position: -1000px 0; }
-}
-@keyframes scrollCity2 {
-0% { background-position: 0 0; }
-100% { background-position: -600px 0; }
-}
-@keyframes scrollCity3 {
-0% { background-position: 0 0; }
-100% { background-position: -300px 0; }
-}
-
 h1 {
 font-size: 4rem;
+background: rgba(0, 0, 0, 0.6);
+padding: 15px 30px;
+border-radius: 10px;
+color: #00f7ff;
 text-shadow: 0 0 20px #00f7ff;
 }
-
-.scroll-incentive {
+p {
 margin-top: 10px;
 font-size: 1.2rem;
-color: #a7e9f1;
-animation: blink 2s infinite;
 }
 
-@keyframes blink {
-0%, 100% { opacity: 1; }
-50% { opacity: 0.4; }
+/* Scroll Pulse */
+.scroll-down {
+margin-top: 40px;
+padding: 10px 20px;
+border: 2px solid #00f7ff;
+color: white;
+border-radius: 10px;
+animation: pulse 2s infinite;
+font-size: 1rem;
+background-color: rgba(0, 0, 0, 0.5);
+}
+@keyframes pulse {
+0% { box-shadow: 0 0 0px #00f7ff; }
+50% { box-shadow: 0 0 20px #00f7ff; }
+100% { box-shadow: 0 0 0px #00f7ff; }
 }
 
-section.visuals {
+/* Sections */
+.section {
 padding: 80px 20px;
 display: flex;
-flex-direction: column;
-align-items: center;
-gap: 60px;
-}
-
-.visual-block {
-display: flex;
+justify-content: center;
+flex-direction: row;
 align-items: center;
 gap: 40px;
-max-width: 1000px;
 flex-wrap: wrap;
 }
-
-.visual-block img {
-max-width: 300px;
-border-radius: 20px;
-box-shadow: 0 0 20px #00f7ff55;
-}
-
-.info-box {
-background: rgba(255, 255, 255, 0.05);
-border: 2px solid #00f7ff55;
-padding: 20px;
-border-radius: 15px;
-max-width: 400px;
-box-shadow: 0 0 20px #00f7ff22;
-}
-
-.info-box h2 {
-color: #00f7ff;
-margin-bottom: 10px;
-}
-
-.form-link {
-text-align: center;
-padding: 60px 20px;
-}
-
-.form-link a {
-font-size: 1.5rem;
-color: #00f7ff;
-text-decoration: none;
-border: 2px solid #00f7ff;
-padding: 10px 20px;
+.section img {
+width: 300px;
 border-radius: 10px;
-transition: background 0.3s;
+box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+}
+.info-box {
+max-width: 300px;
+padding: 20px;
+background: rgba(0, 0, 0, 0.5);
+border: 2px solid #00f7ff;
+border-radius: 12px;
+color: white;
+text-align: left;
+box-shadow: 0 0 12px rgba(0, 247, 255, 0.2);
+}
+.info-box h3 {
+margin-bottom: 10px;
+color: #00f7ff;
 }
 
-.form-link a:hover {
-background: #00f7ff22;
+/* CTA Button */
+.cta-bar {
+margin: 100px auto;
+max-width: 700px;
+padding: 20px;
+text-align: center;
+background: linear-gradient(90deg, #00f7ff, #ff00f7);
+border-radius: 40px;
+font-size: 1.4rem;
+font-weight: bold;
+color: white;
+cursor: pointer;
+animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+from { box-shadow: 0 0 10px #00f7ff; }
+to { box-shadow: 0 0 30px #00f7ff; }
+}
+
+footer {
+text-align: center;
+padding: 20px;
+font-size: 0.8rem;
+opacity: 0.6;
+}
+
+a {
+color: inherit;
+text-decoration: none;
 }
 </style>
 </head>
 <body>
+<!-- City Background Layers -->
+<div class="city1"></div>
+<div class="city2"></div>
+<div class="city3"></div>
 
 <header>
-<div class="city-layer city1"></div>
-<div class="city-layer city2"></div>
-<div class="city-layer city3"></div>
 <h1>BotFusion Tech</h1>
-<p class="scroll-incentive">Scroll to level up your business...</p>
+<p>Next-gen automation, AI chatbots, and digital dominance</p>
+<div class="scroll-down">Scroll down to level up your business</div>
 </header>
 
-<section class="visuals">
-<div class="visual-block">
+<!-- Robot Brain Section -->
+<div class="section">
 <img src="robot_brain.png" alt="Robot Brain">
 <div class="info-box">
-<h2>Smart Chatbots</h2>
+<h3>Smart Chatbots</h3>
 <p>24/7 AI-driven bots that handle sales, support, and scheduling without burnout.</p>
 </div>
 </div>
 
-<div class="visual-block">
+<!-- Atom Hand Section -->
+<div class="section">
 <img src="atom_hand.png" alt="Atom in Robotic Hand">
 <div class="info-box">
-<h2>Website Automation</h2>
+<h3>Website Automation</h3>
 <p>Turn any page into a high-converting funnel with powerful AI integration.</p>
 </div>
 </div>
 
-<div class="visual-block">
+<!-- Brain City Section -->
+<div class="section">
 <img src="brain_city.png" alt="Brain City">
 <div class="info-box">
-<h2>Email Funnels</h2>
+<h3>Email Funnels</h3>
 <p>Capture leads. Convert with sequences. Grow your monthly MRR on autopilot.</p>
 </div>
 </div>
-</section>
 
-<div class="form-link">
-<a href="https://forms.gle/M5PMZ8A6vSWDNHic8" target="_blank">Build My AI Bot</a>
+<!-- Call to Action -->
+<div class="cta-bar">
+<a href="https://forms.gle/M5PMZ8A6vSWDNHic8" target="_blank">Start Your Project Now</a>
 </div>
 
+<footer>
+© 2025 BotFusion Tech. All rights reserved.
+</footer>
 </body>
 </html>
