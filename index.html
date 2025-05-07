@@ -3,192 +3,201 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BotFusion Tech</title>
-<link rel="icon" href="favicon (1).png" />
+<title>ElevateAI Solutions</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-color: white;
-overflow-x: hidden;
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f9f9f9;
+color: #333;
 }
-
-/* Scroll animation city layers */
-.city1, .city2, .city3 {
-position: fixed;
-width: 100%;
-height: 100vh;
-background-repeat: no-repeat;
-background-size: cover;
-z-index: -3;
-animation: move1 60s linear infinite;
-}
-.city2 {
-background-image: url("city_layer2 (1).png");
-animation: move2 100s linear infinite;
-z-index: -2;
-}
-.city3 {
-background-image: url("city_layer3 (1).png");
-animation: move3 140s linear infinite;
-z-index: -1;
-}
-.city1 {
-background-image: url("city_layer1 (1).png");
-}
-@keyframes move1 { 0% { background-position: 0 0; } 100% { background-position: -1000px 0; } }
-@keyframes move2 { 0% { background-position: 0 0; } 100% { background-position: -1500px 0; } }
-@keyframes move3 { 0% { background-position: 0 0; } 100% { background-position: -2000px 0; } }
-
-/* Header */
 header {
-height: 100vh;
+background-color: #fff;
+padding: 20px 40px;
 display: flex;
-flex-direction: column;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-text-align: center;
-position: relative;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-h1 {
-font-size: 4rem;
-background: rgba(0, 0, 0, 0.6);
-padding: 15px 30px;
-border-radius: 10px;
-color: #00f7ff;
-text-shadow: 0 0 20px #00f7ff;
-}
-p {
-margin-top: 10px;
-font-size: 1.2rem;
-}
-
-/* Scroll Pulse */
-.scroll-down {
-margin-top: 40px;
-padding: 10px 20px;
-border: 2px solid #00f7ff;
-color: white;
-border-radius: 10px;
-animation: pulse 2s infinite;
-font-size: 1rem;
-background-color: rgba(0, 0, 0, 0.5);
-}
-@keyframes pulse {
-0% { box-shadow: 0 0 0px #00f7ff; }
-50% { box-shadow: 0 0 20px #00f7ff; }
-100% { box-shadow: 0 0 0px #00f7ff; }
-}
-
-/* Sections */
-.section {
-padding: 80px 20px;
-display: flex;
-justify-content: center;
-flex-direction: row;
-align-items: center;
-gap: 40px;
-flex-wrap: wrap;
-}
-.section img {
-width: 300px;
-border-radius: 10px;
-box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
-}
-.info-box {
-max-width: 300px;
-padding: 20px;
-background: rgba(0, 0, 0, 0.5);
-border: 2px solid #00f7ff;
-border-radius: 12px;
-color: white;
-text-align: left;
-box-shadow: 0 0 12px rgba(0, 247, 255, 0.2);
-}
-.info-box h3 {
-margin-bottom: 10px;
-color: #00f7ff;
-}
-
-/* CTA Button */
-.cta-bar {
-margin: 100px auto;
-max-width: 700px;
-padding: 20px;
-text-align: center;
-background: linear-gradient(90deg, #00f7ff, #ff00f7);
-border-radius: 40px;
-font-size: 1.4rem;
-font-weight: bold;
-color: white;
-cursor: pointer;
-animation: glow 2s ease-in-out infinite alternate;
-}
-@keyframes glow {
-from { box-shadow: 0 0 10px #00f7ff; }
-to { box-shadow: 0 0 30px #00f7ff; }
-}
-
-footer {
-text-align: center;
-padding: 20px;
-font-size: 0.8rem;
-opacity: 0.6;
-}
-
-a {
-color: inherit;
+nav a {
+margin: 0 15px;
 text-decoration: none;
+color: #333;
+font-weight: 500;
+}
+.hero {
+background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+color: #fff;
+padding: 100px 40px;
+text-align: center;
+}
+.hero h1 {
+font-size: 48px;
+margin-bottom: 20px;
+}
+.hero p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+.hero a {
+background-color: #fff;
+color: #2575fc;
+padding: 12px 24px;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+}
+section {
+padding: 60px 40px;
+}
+.section-title {
+text-align: center;
+margin-bottom: 40px;
+}
+.cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+.card {
+background-color: #fff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+flex: 1 1 300px;
+max-width: 300px;
+text-align: center;
+}
+.card h3 {
+margin-bottom: 15px;
+}
+.testimonial {
+background-color: #fff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+max-width: 600px;
+margin: 0 auto;
+text-align: center;
+}
+.testimonial p {
+font-style: italic;
+margin-bottom: 15px;
+}
+.contact-form {
+max-width: 600px;
+margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+width: 100%;
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.contact-form button {
+background-color: #2575fc;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+footer {
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 20px 40px;
+}
+@media (max-width: 768px) {
+.cards {
+flex-direction: column;
+align-items: center;
+}
 }
 </style>
 </head>
 <body>
-<!-- City Background Layers -->
-<div class="city1"></div>
-<div class="city2"></div>
-<div class="city3"></div>
 
 <header>
-<h1>BotFusion Tech</h1>
-<p>Next-gen automation, AI chatbots, and digital dominance</p>
-<div class="scroll-down">Scroll down to level up your business</div>
+<div class="logo">
+<h2>ElevateAI</h2>
+</div>
+<nav>
+<a href="#solutions">Solutions</a>
+<a href="#industries">Industries</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<!-- Robot Brain Section -->
-<div class="section">
-<img src="robot_brain.png" alt="Robot Brain">
-<div class="info-box">
-<h3>Smart Chatbots</h3>
-<p>24/7 AI-driven bots that handle sales, support, and scheduling without burnout.</p>
-</div>
-</div>
+<section class="hero">
+<h1>Automate Success, Amplify Trust</h1>
+<p>Experience seamless customer interactions with our AI-driven chatbot solutions, designed to elevate your brand and build lasting relationships.</p>
+<a href="#contact">Request a Free Demo</a>
+</section>
 
-<!-- Atom Hand Section -->
-<div class="section">
-<img src="atom_hand.png" alt="Atom in Robotic Hand">
-<div class="info-box">
-<h3>Website Automation</h3>
-<p>Turn any page into a high-converting funnel with powerful AI integration.</p>
+<section id="solutions">
+<h2 class="section-title">Our Solutions</h2>
+<div class="cards">
+<div class="card">
+<h3>Lead Generation</h3>
+<p>Capture and qualify leads effortlessly, ensuring your sales team focuses on high-potential prospects.</p>
+</div>
+<div class="card">
+<h3>Customer Support</h3>
+<p>Provide instant, 24/7 support to your customers, enhancing satisfaction and loyalty.</p>
+</div>
+<div class="card">
+<h3>Appointment Scheduling</h3>
+<p>Streamline bookings and reduce no-shows with our intelligent scheduling assistant.</p>
 </div>
 </div>
+</section>
 
-<!-- Brain City Section -->
-<div class="section">
-<img src="brain_city.png" alt="Brain City">
-<div class="info-box">
-<h3>Email Funnels</h3>
-<p>Capture leads. Convert with sequences. Grow your monthly MRR on autopilot.</p>
+<section id="industries">
+<h2 class="section-title">Industries We Serve</h2>
+<div class="cards">
+<div class="card">
+<h3>Healthcare</h3>
+<p>Enhance patient engagement and streamline administrative tasks with our HIPAA-compliant solutions.</p>
+</div>
+<div class="card">
+<h3>Retail</h3>
+<p>Boost sales and customer satisfaction by providing personalized shopping experiences.</p>
+</div>
+<div class="card">
+<h3>Real Estate</h3>
+<p>Automate property inquiries and schedule viewings, freeing up your agents to close deals.</p>
 </div>
 </div>
+</section>
 
-<!-- Call to Action -->
-<div class="cta-bar">
-<a href="https://forms.gle/M5PMZ8A6vSWDNHic8" target="_blank">Start Your Project Now</a>
+<section id="testimonials">
+<h2 class="section-title">What Our Clients Say</h2>
+<div class="testimonial">
+<p>"ElevateAI transformed our customer service operations. We've seen a 40% increase in customer satisfaction!"</p>
+<h4>- Alex R., CEO of RetailCorp</h4>
 </div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Get in Touch</h2>
+<div class="contact-form">
+<form action="https://formspree.io/f/your-form-id" method="POST">
+<input type="text" name="name" placeholder="Your Name" required/>
+<input type="email" name="email" placeholder="Your Email" required/>
+<textarea name="message" rows="5" placeholder="How can we assist you?" required></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</section>
 
 <footer>
-© 2025 BotFusion Tech. All rights reserved.
+<p>&copy; 2025 ElevateAI Solutions. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
